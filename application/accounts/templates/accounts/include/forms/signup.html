@@ -1,0 +1,31 @@
+<form method="post">
+	{{ signUpForm.hidden_tag() }}
+	<div class="form-outline mb-4">
+		{{ signUpForm.email(class='form-control') }}
+		<label class="form-label" for="form2Example1">{{ signUpForm.email.label }}</label>
+	</div>
+	<div class="form-outline mb-4">
+		{{ signUpForm.password1(class='form-control') }}
+		<label class="form-label" for="form2Example2">{{ signUpForm.password1.label }}</label>
+	</div>
+	<div class="form-outline mb-4">
+		{{ signUpForm.password2(class='form-control') }}
+		<label class="form-label" for="form2Example3">{{ signUpForm.password2.label }}</label>
+	</div>
+	<div class="form-outline mb-4">
+		<label class="form-select-label" for="form2Example4">{{ signUpForm.city.label }}</label>
+		{{ signUpForm.city(class='form-select') }}
+	</div>
+	<div class="form-outline mb-4">
+		<label class="form-select-label" for="form2Example5">{{ signUpForm.language.label }}</label>
+		{{ signUpForm.language(class='form-select') }}
+	</div>
+	<div class="form-outline mb-4">
+		{{ signUpForm.subscribe(class='form-check-input') }}
+		<label class="form-check-label" for="form2Example6">{{ signUpForm.subscribe.label }}</label>
+	</div>
+	{{ signUpForm.submit(class="btn btn-primary btn-block mb-4") }}
+	<div class="text-center">
+		<p>Уже есть аккаунт? <a href="{{ url_for('accounts.login') }}">Войти</a></p>
+	</div>
+</form>

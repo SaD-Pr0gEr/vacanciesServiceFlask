@@ -1,0 +1,21 @@
+.block_center {
+    margin: 0 auto;
+}
+
+.pad-20 {
+    padding: 20px;
+}
+
+.pad-40 {
+    padding: 40px;
+}
+
+.x-32 {
+    height: 32px;
+    width: 32px;
+}
+
+.x-24 {
+    height: 24px;
+    width: 24px;
+}

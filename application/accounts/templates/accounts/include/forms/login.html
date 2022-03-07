@@ -1,0 +1,15 @@
+<form method="post">
+	{{ login_form.hidden_tag() }}
+	<div class="form-outline mb-4">
+		{{ login_form.email(class='form-control') }}
+		<label class="form-label" for="form2Example1">{{ login_form.email.label }}</label>
+	</div>
+	<div class="form-outline mb-4">
+		{{ login_form.password(class='form-control') }}
+		<label class="form-label" for="form2Example2">{{ login_form.password.label }}</label>
+	</div>
+	{{ login_form.submit(class="btn btn-primary btn-block mb-4") }}
+	<div class="text-center">
+		<p>Нет аккаунта? <a href="{{ url_for('accounts.signup') }}">Зарегистрируйтесь</a></p>
+	</div>
+</form>

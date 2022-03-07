@@ -1,0 +1,14 @@
+{% extends 'accounts/base.html' %}
+{% block title %} {{ title }} {% endblock title %}
+{% block body %}
+<body>
+	{% include "accounts/include/header.html" %}
+	{% include "accounts/include/messages/flash_messages.html" %}
+	<div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 block_center pad-40">
+		<h1 class="text-center">Регистрация</h1>
+		<br>
+		{% include 'accounts/include/forms/signup.html' %}
+	</div>
+	<script src="{{ url_for("accounts.static", filename='js/dark.js') }}"></script>
+</body>
+{% endblock body %}

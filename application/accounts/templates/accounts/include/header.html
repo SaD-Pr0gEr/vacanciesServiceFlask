@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<img class="x-24" src="{{ url_for('accounts.static', filename='img/dropdown_menu.png') }}" alt="dropdown menu icon">
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<a class="navbar-brand mt-2 mt-lg-0" href="{{ url_for('home') }}">
+				<img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15"
+						alt="MDB Logo" loading="lazy"/>
+			</a>
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('home') }}">Главная</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Вакансии</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Projects</a>
+				</li>
+				{% if current_user.is_anonymous %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('accounts.signup') }}">Регистрация</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('accounts.login') }}">Вход</a>
+					</li>
+				{% else %}
+					{% if current_user.is_admin %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url_for('admin.home') }}">Админ панель</a>
+						</li>
+					{% endif %}
+				{% endif %}
+			</ul>
+		</div>
+		{% if not current_user.is_anonymous %}
+			<div class="d-flex align-items-center">
+				<div class="dropdown">
+					<a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+							role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+						<img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+								alt="Black and White Portrait of a Man" loading="lazy"/>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+						<li>
+							<a class="dropdown-item" href="{{ url_for('accounts.profile') }}">Мой профиль</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ url_for('accounts.update') }}">Настройки</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ url_for('accounts.logout') }}">Выход</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</nav>

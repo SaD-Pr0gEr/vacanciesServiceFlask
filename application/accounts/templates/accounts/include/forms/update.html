@@ -1,0 +1,39 @@
+<form method="post">
+	{{ form.hidden_tag() }}
+	<fieldset class="fieldset">
+		<h3 class="fieldset-title">Редактировать данные</h3>
+		<div class="form-group">
+			<label class="col-md-4 col-sm-3 col-xs-12 control-label labels">Город</label>
+			<div class="col-md-10 col-sm-9 col-xs-12">
+				{{ form.city }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4  col-sm-3 col-xs-12 control-label labels">Язык программирования</label>
+			<div class="col-md-10 col-sm-9 col-xs-12">
+				{{ form.language }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4  col-sm-3 col-xs-12 control-label labels">{{ form.subscribe }} подписка на рассылку</label>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4  col-sm-3 col-xs-12 control-label labels">Новый пароль</label>
+			<div class="col-md-10 col-sm-9 col-xs-12">
+				{{ form.password1 }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-4  col-sm-3 col-xs-12 control-label labels">Повторите пароль</label>
+			<div class="col-md-10 col-sm-9 col-xs-12">
+				{{ form.password2 }}
+			</div>
+		</div>
+	</fieldset>
+	<hr>
+	<div class="form-group">
+		<div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+			{{ form.submit(class='btn btn-danger') }}
+		</div>
+	</div>
+</form>

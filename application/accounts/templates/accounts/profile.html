@@ -1,0 +1,51 @@
+{% extends 'accounts/base.html' %}
+{% block title %} {{ title }} {% endblock title %}
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('accounts.static', filename='css/profile.css') }}">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock extra_head %}
+{% block body %}
+<body>
+	{% include "accounts/include/header.html" %}
+	{% include "accounts/include/messages/flash_messages.html" %}
+	<div class="container rounded bg-white mt-5 mb-5">
+		<div class="row">
+			<div class="col-md-3 border-right">
+				<div class="d-flex flex-column align-items-center text-center p-3 py-5"><img alt="avatar" class="rounded-circle mt-5" width="150px" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">
+					<span class="font-weight-bold">{{ current_user.email }}</span><span class="text-black-50">Дата регистрации {{ current_user.joined_date.strftime("%d.%m.%Y") }}</span>
+				</div>
+			</div>
+			<div class="col-md-5 border-right">
+				<div class="p-3 py-5">
+					<div class="d-flex justify-content-between align-items-center mb-3">
+						<h4 class="text-right">Ваши данные</h4>
+					</div>
+					<div class="row mt-2">
+						<div class="col-md-6"><label class="labels" for="user_email">Email</label><p id="user_email">{{ current_user.email }}</p></div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-6"><label class="labels" for="user_city">Город</label><p id="user_city">{{ current_user.city }}</p></div>
+						<div class="col-md-6"><label class="labels" for="user_lang">Язык программирования</label><p id="user_lang">{{ current_user.language }}</p></div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-6"><label class="labels" for="user_email">Подписка на рассылку</label>
+							<p id="user_email">
+								{% if current_user.subscribe_status %}
+									Да
+								{% else %}
+									Нет
+								{% endif %}
+							</p>
+						</div>
+					</div>
+					<div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"><a
+							class="text-white" href="{{ url_for('accounts.update') }}">Изменить</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{{ url_for("accounts.static", filename='js/dark.js') }}"></script>
+</body>
+{% endblock body %}
