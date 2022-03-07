@@ -1,0 +1,46 @@
+{% extends 'errors/base.html' %}
+{% block title %}
+	{{ title }}
+{% endblock title %}
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('errors.static', filename='css/403.css') }}">
+{% endblock extra_head %}
+{% block body %}
+<body>
+	<a href="{{ url_for('.home') }}" style="text-decoration: none;">
+		<div class="maincontainer">
+			<div class="bat">
+				<img class="wing leftwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+				<img class="body"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+				<img class="wing rightwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+			</div>
+			<div class="bat">
+				<img class="wing leftwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+				<img class="body"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+				<img class="wing rightwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+			</div>
+			<div class="bat">
+				<img class="wing leftwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+				<img class="body"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+				<img class="wing rightwing"
+					 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+			</div>
+			<img class="foregroundimg"
+				 src="https://www.blissfullemon.com/wp-content/uploads/2018/09/HauntedHouseForeground.png"
+				 alt="haunted house"
+			>
+		</div>
+		<h1 class="errorcode">403 FORBIDDEN</h1>
+		<div class="errortext">У вас нет прав на просмотр содержимое страницы!</div>
+		<div class="errortext">Нажмите на страницу, чтобы вернуться!</div>
+	</a>
+</body>
+{% endblock body %}
