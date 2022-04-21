@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+{% block title %} {{ title }} {% endblock title %}
+{% block extra_head %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+{% endblock extra_head %}
+{% block body %}
+<body>
+	{% include "accounts/include/header.html" %}
+	{% include "accounts/include/messages/flash_messages.html" %}
+
+	<script src="{{ url_for("accounts.static", filename='js/dark.js') }}"></script>
+</body>
+{% endblock body %}

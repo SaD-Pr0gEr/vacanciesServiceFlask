@@ -29,7 +29,7 @@
 				{% else %}
 					{% if current_user.is_admin %}
 						<li class="nav-item">
-							<a class="nav-link" href="{{ url_for('admin.home') }}">Админ панель</a>
+							<a class="nav-link" href="{{ url_for('admin.index') }}">Админ панель</a>
 						</li>
 					{% endif %}
 				{% endif %}
